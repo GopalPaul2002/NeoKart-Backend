@@ -14,51 +14,67 @@ let users = [
 let products = [
   {
     id: 1,
-    title: "Premium Wireless Headphones",
-    description: "Industry-leading noise cancellation. Perfect for everyday use.",
-    price: 299.99,
+    title: "Sony WH-1000XM5 Wireless Headphones",
+    description: "Industry-leading noise cancellation. Two processors control 8 microphones for unprecedented noise cancellation. With Auto NC Optimizer, noise canceling is automatically optimized based on your wearing conditions and environment.",
+    price: 348.00,
     category: "Electronics",
-    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?q=80&w=1000&auto=format&fit=crop"
   },
   {
     id: 2,
-    title: "Minimalist Mechanical Keyboard",
-    description: "Compact 75% layout with tactile switches for typing and gaming.",
-    price: 149.99,
+    title: "Keychron Q1 Pro Mechanical Keyboard",
+    description: "A fully customizable 75% layout custom mechanical keyboard with QMK/VIA support. Designed with a double-gasket mount, CNC machined aluminum body, and upgraded OSA profile PBT keycaps.",
+    price: 199.00,
     category: "Electronics",
     image: "https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=1000&auto=format&fit=crop"
   },
   {
     id: 3,
-    title: "Ergonomic Office Chair",
-    description: "Adjustable lumbar support and breathable mesh design.",
-    price: 399.50,
+    title: "Herman Miller Aeron Chair",
+    description: "The benchmark for ergonomic seating. Features 8Z Pellicle mesh for targeted pressure distribution, PostureFit SL for adjustable spinal support, and fully adjustable arms.",
+    price: 1250.00,
     category: "Furniture",
-    image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=1000&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?q=80&w=1000&auto=format&fit=crop"
   },
   {
     id: 4,
-    title: "Ceramic Coffee Mug",
-    description: "Handcrafted minimalist mug, perfect for your morning brew.",
-    price: 24.00,
+    title: "Ember Temperature Control Smart Mug 2",
+    description: "Keeps your hot drink at the exact temperature you prefer (between 120°F - 145°F). Features a 10 oz capacity, 1.5 hour battery life, and control via a smartphone app.",
+    price: 129.95,
     category: "Home",
-    image: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?q=80&w=1000&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1614088059882-70650d53c7c2?q=80&w=1000&auto=format&fit=crop"
   },
   {
     id: 5,
-    title: "Men's Classic T-Shirt",
-    description: "100% organic cotton, breathable and comfortable.",
-    price: 29.99,
-    category: "Fashion",
-    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop"
+    title: "Apple Watch Series 9",
+    description: "Features the S9 chip for a super-bright display and a magical new way to quickly and easily interact with your Apple Watch without touching the screen using Double Tap.",
+    price: 399.00,
+    category: "Electronics",
+    image: "https://images.unsplash.com/photo-1434493789847-2f02b0c1685c?q=80&w=1000&auto=format&fit=crop"
   },
   {
     id: 6,
-    title: "Smart Watch Series 8",
-    description: "Advanced health tracking and seamless connectivity.",
-    price: 349.00,
+    title: "PlayStation 5 DualSense Wireless Controller",
+    description: "Discover a deeper, highly immersive gaming experience that brings the action to life in the palms of your hands. Features haptic feedback and dynamic trigger effects.",
+    price: 69.99,
+    category: "Gaming",
+    image: "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?q=80&w=1000&auto=format&fit=crop"
+  },
+  {
+    id: 7,
+    title: "Oculus Quest 2 Advanced All-In-One VR Headset",
+    description: "Experience total immersion with 3D positional audio, hand tracking and haptic feedback, working together to make virtual worlds feel real. Features 128GB of storage.",
+    price: 299.00,
+    category: "Gaming",
+    image: "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?q=80&w=1000&auto=format&fit=crop"
+  },
+  {
+    id: 8,
+    title: "Logitech MX Master 3S Wireless Mouse",
+    description: "Features an 8K DPI track-on-glass sensor and Quiet Clicks technology, delivering 90% less click noise. The MagSpeed scroll wheel is precise enough to stop on a pixel and quick enough to scroll 1,000 lines per second.",
+    price: 99.99,
     category: "Electronics",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1000&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=1000&auto=format&fit=crop"
   }
 ];
 
