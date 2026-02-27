@@ -12,43 +12,43 @@ let users = [
 ];
 
 let products = [
-  { 
-    id: 1, 
-    title: "Premium Wireless Headphones", 
+  {
+    id: 1,
+    title: "Premium Wireless Headphones",
     description: "Industry-leading noise cancellation. Perfect for everyday use.",
-    price: 299.99, 
+    price: 299.99,
     category: "Electronics",
     image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1000&auto=format&fit=crop"
   },
-  { 
-    id: 2, 
-    title: "Minimalist Mechanical Keyboard", 
+  {
+    id: 2,
+    title: "Minimalist Mechanical Keyboard",
     description: "Compact 75% layout with tactile switches for typing and gaming.",
-    price: 149.99, 
+    price: 149.99,
     category: "Electronics",
     image: "https://images.unsplash.com/photo-1595225476474-87563907a212?q=80&w=1000&auto=format&fit=crop"
   },
-  { 
-    id: 3, 
-    title: "Ergonomic Office Chair", 
+  {
+    id: 3,
+    title: "Ergonomic Office Chair",
     description: "Adjustable lumbar support and breathable mesh design.",
-    price: 399.50, 
+    price: 399.50,
     category: "Furniture",
     image: "https://images.unsplash.com/photo-1592078615290-033ee584e267?q=80&w=1000&auto=format&fit=crop"
   },
-  { 
-    id: 4, 
-    title: "Ceramic Coffee Mug", 
+  {
+    id: 4,
+    title: "Ceramic Coffee Mug",
     description: "Handcrafted minimalist mug, perfect for your morning brew.",
-    price: 24.00, 
+    price: 24.00,
     category: "Home",
     image: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?q=80&w=1000&auto=format&fit=crop"
   },
-  { 
-    id: 5, 
-    title: "Men's Classic T-Shirt", 
+  {
+    id: 5,
+    title: "Men's Classic T-Shirt",
     description: "100% organic cotton, breathable and comfortable.",
-    price: 29.99, 
+    price: 29.99,
     category: "Fashion",
     image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000&auto=format&fit=crop"
   },
@@ -72,7 +72,7 @@ const generateId = () => Date.now() + Math.floor(Math.random() * 1000);
 app.post("/api/auth/login", (req, res) => {
   const { email, password } = req.body;
   const user = users.find(u => u.email === email && u.password === password);
-  
+
   if (user) {
     // Exclude password from response
     const { password, ...userWithoutPassword } = user;
@@ -85,7 +85,7 @@ app.post("/api/auth/login", (req, res) => {
 // Register
 app.post("/api/auth/register", (req, res) => {
   const { name, email, password } = req.body;
-  
+
   if (!name || !email || !password) {
     return res.status(400).json({ message: "Please provide all required fields" });
   }
@@ -102,7 +102,7 @@ app.post("/api/auth/register", (req, res) => {
     password,
     role: "user" // Default role
   };
-  
+
   users.push(newUser);
   const { password: _, ...userWithoutPassword } = newUser;
   res.status(201).json(userWithoutPassword);
@@ -128,7 +128,7 @@ app.get("/api/products/:id", (req, res) => {
 // Create product (Admin)
 app.post("/api/products", (req, res) => {
   const { title, description, price, category, image } = req.body;
-  
+
   if (!title || !price) {
     return res.status(400).json({ message: "Title and price are required" });
   }
@@ -150,7 +150,7 @@ app.post("/api/products", (req, res) => {
 app.put("/api/products/:id", (req, res) => {
   const idStr = req.params.id;
   const index = products.findIndex(p => p.id.toString() === idStr);
-  
+
   if (index !== -1) {
     products[index] = { ...products[index], ...req.body };
     res.json(products[index]);
@@ -164,7 +164,7 @@ app.delete("/api/products/:id", (req, res) => {
   const idStr = req.params.id;
   const initialLength = products.length;
   products = products.filter(p => p.id.toString() !== idStr);
-  
+
   if (products.length < initialLength) {
     res.json({ message: "Product deleted successfully" });
   } else {
@@ -176,7 +176,7 @@ app.delete("/api/products/:id", (req, res) => {
 // Create order
 app.post("/api/orders", (req, res) => {
   const { userId, items, totalAmount, shippingAddress, paymentStatus } = req.body;
-  
+
   if (!userId || !items || items.length === 0) {
     return res.status(400).json({ message: "Invalid order data" });
   }
@@ -210,7 +210,8 @@ app.get("/api/orders", (req, res) => {
   res.json(sortedOrders);
 });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Backend running at http://localhost:${PORT}`);
+  console.log(`Backend running at port ${PORT}`);
 });
+
